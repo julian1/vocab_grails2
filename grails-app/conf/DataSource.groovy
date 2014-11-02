@@ -16,12 +16,25 @@ hibernate {
 
 // environment specific settings
 environments {
-    development {
+
+  development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            //dbCreate = "update"
+            driverClassName = "org.postgresql.Driver"
+            url = "jdbc:postgresql://127.0.0.1:5432/vocab"
+            username = "contr_vocab_db"
+            password = "contr_vocab_db"
         }
     }
+
+
+  //  development {
+   //     dataSource {
+    //        dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+     //       url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+      //  }
+    //}
+
     test {
         dataSource {
             dbCreate = "update"
