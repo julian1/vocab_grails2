@@ -1,3 +1,0 @@
-
-grails create-app vocab
-
