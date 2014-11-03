@@ -1,4 +1,10 @@
 
+v = vocab.VocabularyType.get( 'Parameter' ) ;
+worked.
+
+
+v = vocab.VocabularyType.get(1)
+
 Fails,
 rs = vocab.VocabularyRegister.get( 1);
 vt = vocab.VocabularyTerm.get(1 );
