@@ -1,4 +1,13 @@
 
+-------
+Ok, this works
+grails console
+(new vocab.Organisation(  name: 'whoot', acronym: 'xx' )).save();
+
+ctrl-d 
+
+-------
+
 build.sh
 
 ----
