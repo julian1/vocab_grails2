@@ -15,9 +15,11 @@ class VocabularyTerm {
 	String termNotes
 	VocabularyRegister vocabularyRegister
 	ReferenceSource referenceSource
-	VocabularyType vocabularyType
-	ResponsibleParty responsibleParty
-	Person person
+//	VocabularyType vocabularyType
+//	ResponsibleParty responsibleParty
+	ResponsibleParty proposerResponsibleParty
+//	Person person
+	Person addedByPerson
 
 	static hasMany = [amendments: Amendment,
 	                  externalAssociatedTermses: ExternalAssociatedTerms,
