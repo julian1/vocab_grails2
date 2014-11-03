@@ -1,4 +1,16 @@
 
+works
+vocab.Organisation.list() ;
+vocab.ResponsibleParty.list(); 
+def o = vocab.Organisation.get(1) ;
+
+groovy:000> o = vocab.Organisation.get(1) ;
+===> vocab.Organisation : 1
+groovy:000> o.name
+===> Integrated Marine Observing System
+
+
+
 -------
 Ok, this works
 grails console
