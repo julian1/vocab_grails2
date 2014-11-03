@@ -75,7 +75,8 @@ grails.project.dependency.resolution = {
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
 
-        runtime ':db-reverse-engineer:0.5'
+		// must be commented out or get java.lang.NoClassDefFoundError: org/hibernate/event/spi/PreLoadEventListener
+        //runtime ':db-reverse-engineer:0.5'
 
     }
 }
