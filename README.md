@@ -1,7 +1,23 @@
 
+Fails,
+rs = vocab.VocabularyRegister.get( 1);
+vt = vocab.VocabularyTerm.get(1 );
+
+This works - now
+groovy:000> vt.proposerResponsibleParty.person.name
+
+----
+Note, how we can drill down the terms,
+
+groovy:000> rp = vocab.ResponsibleParty.get( 1); 
+groovy:000> rp.person.name
+
+
+
+
 works
 vocab.Organisation.list() ;
-vocab.ResponsibleParty.list(); 
+vocab.ResponsibleParty.list();
 def o = vocab.Organisation.get(1) ;
 
 groovy:000> o = vocab.Organisation.get(1) ;
@@ -11,15 +27,16 @@ groovy:000> o.name
 
 
 
+
 -------
 Ok, this works
 grails console
 (new vocab.Organisation(  name: 'whoot', acronym: 'xx' )).save();
 
-ctrl-d 
+ctrl-d
 
 -------
-Need to downgrade hibernate version to do the rev-engineer. 
+Need to downgrade hibernate version to do the rev-engineer.
 then upgrade to get it start in console.
 
 -------
