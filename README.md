@@ -4,7 +4,9 @@ rs = vocab.VocabularyRegister.get( 1);
 vt = vocab.VocabularyTerm.get(1 );
 
 This works - now
-groovy:000> vt.proposerResponsibleParty.person.name
+
+vt = vocab.VocabularyTerm.get(1 );
+vt.proposerResponsibleParty.person.name
 
 ----
 Note, how we can drill down the terms,
