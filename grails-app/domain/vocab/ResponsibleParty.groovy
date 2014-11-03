@@ -15,8 +15,9 @@ class ResponsibleParty {
 
 	// TODO you have multiple hasMany references for class(es) [VocabularyRegister] 
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
-	static mappedBy = [vocabularyRegistersForManagerResponsiblePartyId: "TODO",
-	                   vocabularyRegistersForOwnerResponsiblePartyId: "TODO"]
+    static mappedBy = [vocabularyRegistersForManagerResponsiblePartyId: "responsiblePartyByManagerResponsiblePartyId",
+                          vocabularyRegistersForOwnerResponsiblePartyId: "responsiblePartyByOwnerResponsiblePartyId"]
+
 
 	static mapping = {
 		id generator: "assigned"

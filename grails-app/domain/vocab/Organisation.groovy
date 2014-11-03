@@ -14,7 +14,9 @@ class Organisation {
 	                  responsibleParties: ResponsibleParty]
 
 	static mapping = {
-		id generator: "assigned"
+
+		id generator:'sequence', params:[sequence:'organisation_id_seq']
+		//id generator: "assigned"
 		version false
 	}
 

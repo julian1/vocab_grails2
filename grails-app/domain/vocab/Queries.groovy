@@ -41,8 +41,8 @@ class Queries implements Serializable {
 	}
 
 	static constraints = {
-		//BDuration nullable: true
-		//QDuration nullable: true
+//		BDuration nullable: true
+//		QDuration nullable: true
 		pid nullable: true
 		role nullable: true
 		database nullable: true

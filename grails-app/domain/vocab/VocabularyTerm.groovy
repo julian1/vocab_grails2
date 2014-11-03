@@ -28,8 +28,8 @@ class VocabularyTerm {
 
 	// TODO you have multiple hasMany references for class(es) [InternalAssociatedTerms] 
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
-	static mappedBy = [internalAssociatedTermsesForObjectVocabularyTermId: "TODO",
-	                   internalAssociatedTermsesForSubjectVocabularyTermId: "TODO"]
+	static mappedBy = [internalAssociatedTermsesForObjectVocabularyTermId: "vocabularyTermByObjectVocabularyTermId",
+	                   internalAssociatedTermsesForSubjectVocabularyTermId: "vocabularyTermBySubjectVocabularyTermId"]
 
 	static mapping = {
 		id generator: "assigned"

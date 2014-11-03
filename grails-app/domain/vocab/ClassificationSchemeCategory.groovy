@@ -15,8 +15,8 @@ class ClassificationSchemeCategory {
 
 	// TODO you have multiple hasMany references for class(es) [ClassificationSchemeAssociation] 
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
-	static mappedBy = [classificationSchemeAssociationsForClassificationSchemeCategoryId: "TODO",
-	                   classificationSchemeAssociationsForParentClassificationSchemeCategoryId: "TODO"]
+	static mappedBy = [classificationSchemeAssociationsForClassificationSchemeCategoryId: "classificationSchemeCategoryByClassificationSchemeCategoryId",
+	                   classificationSchemeAssociationsForParentClassificationSchemeCategoryId: "classificationSchemeCategoryByParentClassificationSchemeCategoryId"]
 
 	static mapping = {
 		id generator: "assigned"
