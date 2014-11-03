@@ -7,6 +7,10 @@ grails console
 ctrl-d 
 
 -------
+Need to downgrade hibernate version to do the rev-engineer. 
+then upgrade to get it start in console.
+
+-------
 
 build.sh
 
