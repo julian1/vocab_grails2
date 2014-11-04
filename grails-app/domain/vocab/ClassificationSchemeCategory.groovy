@@ -8,15 +8,15 @@ class ClassificationSchemeCategory {
 	Date dateAdded
 	ClassificationScheme classificationScheme
 
-	static hasMany = [classificationSchemeAssociationsForClassificationSchemeCategoryId: ClassificationSchemeAssociation,
-	                  classificationSchemeAssociationsForParentClassificationSchemeCategoryId: ClassificationSchemeAssociation,
+	static hasMany = [ classificationSchemeCategorys : ClassificationSchemeAssociation,
+	                  parentClassificationSchemeCategorys : ClassificationSchemeAssociation,
 	                  termCategoryClassifications: TermCategoryClassification]
 	static belongsTo = [ClassificationScheme]
 
 	// TODO you have multiple hasMany references for class(es) [ClassificationSchemeAssociation] 
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
-	static mappedBy = [classificationSchemeAssociationsForClassificationSchemeCategoryId: "classificationSchemeCategoryByClassificationSchemeCategoryId",
-	                   classificationSchemeAssociationsForParentClassificationSchemeCategoryId: "classificationSchemeCategoryByParentClassificationSchemeCategoryId"]
+	static mappedBy = [ classificationSchemeCategorys: "classificationSchemeCategory",
+	                  parentClassificationSchemeCategorys: "parentClassificationSchemeCategory"]
 
 	static mapping = {
 		id generator: "assigned"

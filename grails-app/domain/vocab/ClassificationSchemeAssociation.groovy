@@ -2,8 +2,12 @@ package vocab
 
 class ClassificationSchemeAssociation {
 
-	ClassificationSchemeCategory classificationSchemeCategoryByClassificationSchemeCategoryId
-	ClassificationSchemeCategory classificationSchemeCategoryByParentClassificationSchemeCategoryId
+// classification_scheme_category_id        | integer | 
+// parent_classification_scheme_category_id | integer | 
+
+
+	ClassificationSchemeCategory classificationSchemeCategory
+	ClassificationSchemeCategory parentClassificationSchemeCategory
 
 	static belongsTo = [ClassificationSchemeCategory]
 

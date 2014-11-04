@@ -58,4 +58,13 @@ println eat.vocabularyTerm.uid
 println eat.associationType.name
 
 
+vocab.ClassificationSchemeAssociation.list()
+csa = vocab.ClassificationSchemeAssociation.get( 1)
+println csa.classificationSchemeCategory.name
+println csa.parentClassificationSchemeCategory.name
+
+
+
+
+
 
