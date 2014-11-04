@@ -21,7 +21,7 @@ println vocab.ClassificationScheme.list().name
 println vocab.ClassificationScheme.get(1).name
 
 println vocab.VocabularyRegister.list().uid 
-r = vocab.VocabularyRegister.get( 1)
+r = vocab.VocabularyRegister.get(1)
 println r.uid
 println r.managerResponsibleParty.person.name
 println r.ownerResponsibleParty.organisation.name
@@ -50,6 +50,12 @@ iat = vocab.InternalAssociatedTerms.get(1)
 println iat.objectVocabularyTerm.uid
 println iat.subjectVocabularyTerm.uid
 println iat.associationType.name
+
+
+eat = vocab.ExternalAssociatedTerms.get(1)
+println eat.uid
+println eat.vocabularyTerm.uid
+println eat.associationType.name
 
 
 

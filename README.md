@@ -1,6 +1,6 @@
 
 Issues
-	- belongs too 
+	- ownership semantics - belongs to 
 	- sequence number generation and saving
 	- need to combine into the same git repo - so changes will track together  
 		- and sparql mappings.

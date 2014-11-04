@@ -22,16 +22,18 @@ class VocabularyTerm {
 	Person addedByPerson
 
 	static hasMany = [amendments: Amendment,
-	                  externalAssociatedTermses: ExternalAssociatedTerms,
+	                  externalAssociatedTerms: ExternalAssociatedTerms,
 	                  objectVocabularyTerms: InternalAssociatedTerms,
 	                  subjectVocabularyTerms : InternalAssociatedTerms,
 	                  termCategoryClassifications: TermCategoryClassification]
 	static belongsTo = [Person, ReferenceSource, ResponsibleParty, VocabularyRegister, VocabularyType]
 
-	// TODO you have multiple hasMany references for class(es) [InternalAssociatedTerms] 
+	// TODO you have multiple hasMany references for class(es) [InternalAssociatedTerms]
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
 	static mappedBy = [ objectVocabularyTerms: "objectVocabularyTerm",
-	                   subjectVocabularyTerms: "subjectVocabularyTerm"]
+	                   subjectVocabularyTerms: "subjectVocabularyTerm",
+	                   externalAssociatedTerms: "vocabularyTerm"
+				]
 
 	static mapping = {
 		id generator: "assigned"
