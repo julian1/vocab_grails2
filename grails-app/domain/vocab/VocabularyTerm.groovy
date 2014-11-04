@@ -15,7 +15,7 @@ class VocabularyTerm {
 	String termNotes
 	VocabularyRegister vocabularyRegister
 	ReferenceSource referenceSource
-//	VocabularyType vocabularyType
+	VocabularyType vocabularyType
 //	ResponsibleParty responsibleParty
 	ResponsibleParty proposerResponsibleParty
 //	Person person
