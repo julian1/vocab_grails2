@@ -64,7 +64,8 @@ println csa.classificationSchemeCategory.name
 println csa.parentClassificationSchemeCategory.name
 
 
-
-
+tcc = vocab.TermCategoryClassification.get( 1)
+println tcc.vocabularyTerm.uid
+println tcc.classificationSchemeCategory.name
 
 
