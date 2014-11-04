@@ -46,5 +46,10 @@ println a.vocabularyTerm.uid
 println a.vocabularyTerm.vocabularyRegister.uid
 
 
+iat = vocab.InternalAssociatedTerms.get(1)
+println iat.objectVocabularyTerm.uid
+println iat.subjectVocabularyTerm.uid
+println iat.associationType.name
+
 
 

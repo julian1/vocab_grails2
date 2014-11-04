@@ -2,9 +2,9 @@ package vocab
 
 class InternalAssociatedTerms {
 
-	VocabularyTerm vocabularyTermByObjectVocabularyTermId
+	VocabularyTerm objectVocabularyTerm
 	AssociationType associationType
-	VocabularyTerm vocabularyTermBySubjectVocabularyTermId
+	VocabularyTerm subjectVocabularyTerm
 
 	static belongsTo = [AssociationType, VocabularyTerm]
 
