@@ -7,7 +7,7 @@ class GetInternalAssociatedTerms implements Serializable {
 
 	String uid
 	String name
-	String type
+	String associationTypeName
 	String parentUid
 	String parentName
 
@@ -15,7 +15,7 @@ class GetInternalAssociatedTerms implements Serializable {
 		def builder = new HashCodeBuilder()
 		builder.append uid
 		builder.append name
-		builder.append type
+		builder.append associationTypeName
 		builder.append parentUid
 		builder.append parentName
 		builder.toHashCode()
@@ -26,21 +26,21 @@ class GetInternalAssociatedTerms implements Serializable {
 		def builder = new EqualsBuilder()
 		builder.append uid, other.uid
 		builder.append name, other.name
-		builder.append type, other.type
+		builder.append associationTypeName, other.associationTypeName
 		builder.append parentUid, other.parentUid
 		builder.append parentName, other.parentName
 		builder.isEquals()
 	}
 
 	static mapping = {
-		id composite: ["uid", "name", "type", "parentUid", "parentName"]
+		id composite: ["uid", "name", "associationTypeName", "parentUid", "parentName"]
 		version false
 	}
 
 	static constraints = {
 		uid nullable: true
 		name nullable: true
-		type nullable: true
+		associationTypeName nullable: true
 		parentUid nullable: true
 		parentName nullable: true
 	}

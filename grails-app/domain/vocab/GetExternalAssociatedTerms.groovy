@@ -8,14 +8,14 @@ class GetExternalAssociatedTerms implements Serializable {
 	String uid
 	String name
 	String externalUid
-	String type
+	String associationType
 
 	int hashCode() {
 		def builder = new HashCodeBuilder()
 		builder.append uid
 		builder.append name
 		builder.append externalUid
-		builder.append type
+		builder.append associationType
 		builder.toHashCode()
 	}
 
@@ -25,12 +25,12 @@ class GetExternalAssociatedTerms implements Serializable {
 		builder.append uid, other.uid
 		builder.append name, other.name
 		builder.append externalUid, other.externalUid
-		builder.append type, other.type
+		builder.append associationType, other.associationType
 		builder.isEquals()
 	}
 
 	static mapping = {
-		id composite: ["uid", "name", "externalUid", "type"]
+		id composite: ["uid", "name", "externalUid", "associationType"]
 		version false
 	}
 
@@ -38,6 +38,6 @@ class GetExternalAssociatedTerms implements Serializable {
 		uid nullable: true
 		name nullable: true
 		externalUid nullable: true
-		type nullable: true
+		associationType nullable: true
 	}
 }
