@@ -21,8 +21,10 @@ println vocab.ClassificationScheme.list().name
 println vocab.ClassificationScheme.get(1).name
 
 println vocab.VocabularyRegister.list().uid 
-println vocab.VocabularyRegister.get( 1).uid
-println vocab.VocabularyRegister.get( 1).managerResponsibleParty.person.name
+r = vocab.VocabularyRegister.get( 1)
+println r.uid
+println r.managerResponsibleParty.person.name
+println r.ownerResponsibleParty.organisation.name
 
 println vocab.VocabularyType.list().name
 println vocab.VocabularyType.get(1).name
