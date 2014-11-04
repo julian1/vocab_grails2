@@ -1,4 +1,44 @@
 
+Register now works
+groovy:000> r = vocab.VocabularyRegister.get(1)
+===> vocab.VocabularyRegister : 1
+groovy:000> r.uid
+===> http://vocab.aodn.org.au/def/parameter
+groovy:000> r._version
+===> http://vocab.aodn.org.au/def/parameter/version1.0                                                             
+groovy:000> r.managerResponsibleParty.person.name
+===> Mancini, Sebastien
+groovy:000> 
+
+
+
+fails.
+
+Either, 
+ grails run-script test.groovy
+ grails shell
+
+
+this_.responsible_party_by_manager_responsible_party_id_id
+
+
+ORM - reverse engineer,
+	- sequences - hibernate wants own single sequence
+	- missing foreign key constraints
+	- version field. 
+	- gorm dynamic typing bugs.
+
+-----
+
+groovy:000> vt = vocab.VocabularyTerm.get(1 );
+===> vocab.VocabularyTerm : 1
+groovy:000> vt.proposerResponsibleParty.person.name
+===> Mancini, Sebastien
+groovy:000> vt.vocabularyType.name
+===> Instrument
+
+-------
+
 v = vocab.VocabularyType.get( 'Parameter' ) ;
 worked.
 
