@@ -9,10 +9,13 @@ class VocabularyRegister {
 	String languageCode
 	String languageCountry
 	String languageEncoding
+	String _version
 	Date date
 	Date dateOfLastChange
-	ResponsibleParty responsiblePartyByOwnerResponsiblePartyId
-	ResponsibleParty responsiblePartyByManagerResponsiblePartyId
+	//  ERROR: column this_.responsible_party_by_manager_responsible_party_id_id does not exist
+	// db column manager_responsible_party_id 
+	ResponsibleParty ownerResponsibleParty
+	ResponsibleParty managerResponsibleParty
 
 	static hasMany = [amendments: Amendment,
 	                  vocabularyTerms: VocabularyTerm]
@@ -20,6 +23,7 @@ class VocabularyRegister {
 
 	static mapping = {
 		id generator: "assigned"
+		version false
 	}
 
 	static constraints = {

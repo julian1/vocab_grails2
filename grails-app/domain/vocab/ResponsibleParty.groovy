@@ -8,15 +8,17 @@ class ResponsibleParty {
 
 	static hasMany = [amendments: Amendment,
 	                  classificationSchemes: ClassificationScheme,
-	                  vocabularyRegistersForManagerResponsiblePartyId: VocabularyRegister,
-	                  vocabularyRegistersForOwnerResponsiblePartyId: VocabularyRegister,
+	                  managerResponsiblePartys: VocabularyRegister,
+	                  ownerResponsiblePartys: VocabularyRegister,
 	                  vocabularyTerms: VocabularyTerm]
 	static belongsTo = [AffiliationType, Organisation, Person]
 
 	// TODO you have multiple hasMany references for class(es) [VocabularyRegister] 
 	//      so you'll need to disambiguate them with the 'mappedBy' property:
-    static mappedBy = [vocabularyRegistersForManagerResponsiblePartyId: "responsiblePartyByManagerResponsiblePartyId",
-                          vocabularyRegistersForOwnerResponsiblePartyId: "responsiblePartyByOwnerResponsiblePartyId"]
+
+
+    static mappedBy = [ managerResponsiblePartys: "managerResponsibleParty",
+                         ownerResponsiblePartys: "ownerResponsibleParty"]
 
 
 	static mapping = {
