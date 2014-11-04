@@ -9,7 +9,7 @@ class AssociationType {
 	                  internalAssociatedTermses: InternalAssociatedTerms]
 
 	static mapping = {
-		id name: "name", generator: "assigned"
+		id generator: "assigned"
 		version false
 	}
 

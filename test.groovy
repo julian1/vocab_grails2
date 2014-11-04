@@ -1,15 +1,15 @@
 
-//println vocab.Organisation.list().name
-//println vocab.Organisation.get(1).name
+println vocab.Organisation.list().name
+println vocab.Organisation.get(1).name
 
-//println vocab.Person.list().name
-//println vocab.Person.get(1).name
+println vocab.Person.list().name
+println vocab.Person.get(1).name
 
-//println vocab.AffiliationType.list().name
-//println vocab.AffiliationType.get(1).name
+println vocab.AffiliationType.list().name
+println vocab.AffiliationType.get(1).name
 
-//println vocab.OrganisationSynonym.list().name
-// table is empty
+// note, table is empty
+println vocab.OrganisationSynonym.list().name
 
 println vocab.ReferenceSource.list().citationString
 println vocab.ReferenceSource.get(1).citationString
@@ -34,3 +34,5 @@ println vt.proposerResponsibleParty.person.name
 println vt.proposerResponsibleParty.organisation.name
 
 
+println vocab.AssociationType.get(1).name
+println vocab.AssociationType.list().name
