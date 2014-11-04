@@ -36,3 +36,6 @@ println vt.proposerResponsibleParty.organisation.name
 
 println vocab.AssociationType.get(1).name
 println vocab.AssociationType.list().name
+
+
+
