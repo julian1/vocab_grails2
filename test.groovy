@@ -37,5 +37,12 @@ println vt.proposerResponsibleParty.organisation.name
 println vocab.AssociationType.get(1).name
 println vocab.AssociationType.list().name
 
+println vocab.Amendment.list().type
+a = vocab.Amendment.get(1)
+println a.type
+println a.vocabularyTerm.uid
+println a.vocabularyTerm.vocabularyRegister.uid
+
+
 
 
