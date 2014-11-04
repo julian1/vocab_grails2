@@ -1,11 +1,17 @@
 
 Issues
+	- review pluralisation - etc. partys
+
 	- ownership semantics - belongs to 
+		- classification scheme association
+		- transactions
 	- sequence number generation and saving
 	- need to combine into the same git repo - so changes will track together  
 		- and sparql mappings.
 
 	- need to change version field in db changelog. 
+
+	understand optimistic locking strategy.
 
 ORM - reverse engineer,
 	- sequences - hibernate wants own single sequence
