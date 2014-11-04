@@ -1,26 +1,11 @@
 
-Register now works
-groovy:000> r = vocab.VocabularyRegister.get(1)
-===> vocab.VocabularyRegister : 1
-groovy:000> r.uid
-===> http://vocab.aodn.org.au/def/parameter
-groovy:000> r._version
-===> http://vocab.aodn.org.au/def/parameter/version1.0                                                             
-groovy:000> r.managerResponsibleParty.person.name
-===> Mancini, Sebastien
-groovy:000> 
+Issues
+	- belongs too 
+	- sequence number generation and saving
+	- need to combine into the same git repo - so changes will track together  
+		- and sparql mappings.
 
-
-
-fails.
-
-Either, 
- grails run-script test.groovy
- grails shell
-
-
-this_.responsible_party_by_manager_responsible_party_id_id
-
+	- need to change version field in db changelog. 
 
 ORM - reverse engineer,
 	- sequences - hibernate wants own single sequence
