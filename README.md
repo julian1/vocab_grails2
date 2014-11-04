@@ -2,6 +2,9 @@
 Issues
 	- review pluralisation - etc. partys
 
+	- remove view code from hibernate.
+	- test changes / transactions
+
 	- ownership semantics - belongs to 
 		- classification scheme association
 		- transactions
