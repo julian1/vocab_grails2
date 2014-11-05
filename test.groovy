@@ -77,7 +77,7 @@ o = new vocab.Organisation(  name: 'a new organisation', acronym: 'whoot' )
 // discard changes
 o = new vocab.Organisation(  name: 'another new organisation', acronym: 'whoot' )
 o.discard()
-o.save( flush: true, failOnError:true )
+//o.save( flush: true, failOnError:true )
 
 // want to try to unambiguously access a responsible party
 
@@ -125,6 +125,8 @@ vocab.VocabularyTerm.count
 // works
 rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
 rp.properties.each {  prop -> println "$prop"  }
+// or
+rp.properties.each {  println it }
 
 // testing dirty
 rp.isDirty();
@@ -136,35 +138,6 @@ rp.amendments
 
 // and drill down from rp to organisation and see those properties,
 rp.organisation.properties.each {  prop -> println "$prop"  }
-
-
-
-//////////////////
-// change works - on fresh db.
-rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
-o = vocab.Organisation.find( "from Organisation where acronym = 'AAD'" )
-rp.organisation = o
-rp.isDirty()
-// doens't work? 
-//rp.save( flush: true, failOnError:true )
-
-
-// need to change back
-o = vocab.Organisation.find( "from Organisation where acronym = 'eMII'" )
-rp.organisation = o
-//rp.save( flush: true, failOnError:true )
-
-
-// change amendment type
-a = vocab.Amendment.get( 1)
-a.type = 'removing'
-a.save( flush: true, failOnError:true )
-
-// change amendment responsible party
-a.responsibleParty = vocab.ResponsibleParty.get( 3)
-a.isDirty()
-a.save( flush: true, failOnError:true )
-
 
 
 
