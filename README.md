@@ -1,3 +1,9 @@
+
+To run,
+
+grails run-script test.groovy
+grails shell 
+
 Can now generate the db from the domain. or the liquibase changeset.
 ---
 
