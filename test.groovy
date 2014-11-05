@@ -69,3 +69,66 @@ println tcc.vocabularyTerm.uid
 println tcc.classificationSchemeCategory.name
 
 
+
+// new change
+o = new vocab.Organisation(  name: 'a new organisation', acronym: 'whoot' )
+o.save( flush: true )
+
+// discard changes
+o = new vocab.Organisation(  name: 'another new organisation', acronym: 'whoot' )
+discard()
+o.save( flush: true )
+
+// want to try to unambiguously access a responsible party
+
+// need asserts on this stuff.
+
+vocab.Organisation.findAll( "from Organisation where acronym = 'eMII' " )
+vocab.Organisation.findAll( "from Organisation where acronym = 'eMII2' " )
+
+vocab.Organisation.find( "from Organisation where acronym = 'eMII' " )
+vocab.Organisation.find( "from Organisation where acronym = :acronym", [ acronym: 'eMII' ] )
+
+// note HQL language, which supports joins behind the scenes - joining rp on organisation
+vocab.ResponsibleParty.findAll( "from ResponsibleParty where organisation.acronym = :acronym", [ acronym: 'eMII' ] )
+
+rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = :acronym", [ acronym: 'eMII' ] )
+
+vocab.ResponsibleParty.findAll( "from ResponsibleParty where organisation.acronym = :acronym", [ acronym: 'eMII' ] ).person.name
+
+// fully specified rp
+// should be a way to ensure only one entry
+rp = vocab.ResponsibleParty.findAll( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
+
+
+vocab.VocabularyTerm.findAll( "from VocabularyTerm " ).uid
+
+term = vocab.VocabularyTerm.find( "from VocabularyTerm where uid = 'http://vocab.nerc.ac.uk/collection/L22/current/TOOL0665' " )
+println term.uid
+println term.definition
+
+term.definition = 'whoot'
+term.save( flush: = true )
+
+# will throw an exception - reveal source of issues on save
+term.save( failOnError:true )
+
+# count of vocab terms
+vocab.VocabularyTerm.count
+
+
+# can introspect the db properites
+# works
+rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
+rp.properties.each {  prop -> println "$prop"  }
+
+# and can look at the reverse mappings
+# eg. all the amendments proposed by the rp,
+rp.amendments
+
+# and drill down from rp to organisation and see those properties,
+rp.organisation.properties.each {  prop -> println "$prop"  }
+
+
+
+
