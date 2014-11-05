@@ -107,6 +107,8 @@ term = vocab.VocabularyTerm.find( "from VocabularyTerm where uid = 'http://vocab
 println term.uid
 println term.definition
 
+term.vocabularyRegister.properties.each   {  prop -> println "$prop"  }
+
 term.definition = 'whoot'
 //#term.save( flush: = true )
 
@@ -136,8 +138,31 @@ rp.amendments
 rp.organisation.properties.each {  prop -> println "$prop"  }
 
 
-term = vocab.VocabularyTerm.find( "from VocabularyTerm where uid = 'http://vocab.nerc.ac.uk/collection/L22/current/TOOL0665' " )
-term.vocabularyRegister.properties.each   {  prop -> println "$prop"  }
+
+//////////////////
+// change works - on fresh db.
+rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
+o = vocab.Organisation.find( "from Organisation where acronym = 'AAD'" )
+rp.organisation = o
+rp.isDirty()
+rp.save( flush: true )
+
+// need to change back
+o = vocab.Organisation.find( "from Organisation where acronym = 'eMII'" )
+rp.organisation = o
+rp.save( flush: true )
+
+
+
+a = vocab.Amendment.get( 1)
+a.type = 'removing'
+a.save( flush: true, failOnError:true )
+
+
+a.responsibleParty = vocab.ResponsibleParty.get( 3)
+a.isDirty()
+a.save( flush: true, failOnError:true )
+
 
 
 
