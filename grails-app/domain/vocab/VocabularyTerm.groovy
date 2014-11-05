@@ -52,5 +52,7 @@ class VocabularyTerm {
 		termStatus nullable: true, maxSize: 20
 		dateStatusAmended nullable: true
 		termNotes nullable: true, maxSize: 1010
+
+		referenceSource nullable: true
 	}
 }
