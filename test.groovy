@@ -76,7 +76,7 @@ o.save( flush: true )
 
 // discard changes
 o = new vocab.Organisation(  name: 'another new organisation', acronym: 'whoot' )
-discard()
+o.discard()
 o.save( flush: true )
 
 // want to try to unambiguously access a responsible party
@@ -108,27 +108,36 @@ println term.uid
 println term.definition
 
 term.definition = 'whoot'
-term.save( flush: = true )
+//#term.save( flush: = true )
 
-# will throw an exception - reveal source of issues on save
-term.save( failOnError:true )
+// will throw an exception - reveal source of issues on save
+//term.save( failOnError:true )
 
-# count of vocab terms
+// count of vocab terms
 vocab.VocabularyTerm.count
 
 
-# can introspect the db properites
-# works
+
+
+// can introspect the db properites
+// works
 rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acronym = 'eMII' and person.name = 'Mancini, Sebastien'" )
 rp.properties.each {  prop -> println "$prop"  }
 
-# and can look at the reverse mappings
-# eg. all the amendments proposed by the rp,
+// testing dirty
+rp.isDirty();
+rp.getDirtyPropertyNames()
+
+// and can look at the reverse mappings
+// eg. all the amendments proposed by the rp,
 rp.amendments
 
-# and drill down from rp to organisation and see those properties,
+// and drill down from rp to organisation and see those properties,
 rp.organisation.properties.each {  prop -> println "$prop"  }
 
+
+term = vocab.VocabularyTerm.find( "from VocabularyTerm where uid = 'http://vocab.nerc.ac.uk/collection/L22/current/TOOL0665' " )
+term.vocabularyRegister.properties.each   {  prop -> println "$prop"  }
 
 
 
