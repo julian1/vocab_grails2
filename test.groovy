@@ -72,12 +72,12 @@ println tcc.classificationSchemeCategory.name
 
 // new change
 o = new vocab.Organisation(  name: 'a new organisation', acronym: 'whoot' )
-o.save( flush: true )
+//o.save( flush: true, failOnError:true )
 
 // discard changes
 o = new vocab.Organisation(  name: 'another new organisation', acronym: 'whoot' )
 o.discard()
-o.save( flush: true )
+o.save( flush: true, failOnError:true )
 
 // want to try to unambiguously access a responsible party
 
@@ -145,20 +145,22 @@ rp = vocab.ResponsibleParty.find( "from ResponsibleParty where organisation.acro
 o = vocab.Organisation.find( "from Organisation where acronym = 'AAD'" )
 rp.organisation = o
 rp.isDirty()
-rp.save( flush: true )
+// doens't work? 
+//rp.save( flush: true, failOnError:true )
+
 
 // need to change back
 o = vocab.Organisation.find( "from Organisation where acronym = 'eMII'" )
 rp.organisation = o
-rp.save( flush: true )
+//rp.save( flush: true, failOnError:true )
 
 
-
+// change amendment type
 a = vocab.Amendment.get( 1)
 a.type = 'removing'
 a.save( flush: true, failOnError:true )
 
-
+// change amendment responsible party
 a.responsibleParty = vocab.ResponsibleParty.get( 3)
 a.isDirty()
 a.save( flush: true, failOnError:true )
