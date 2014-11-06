@@ -1,4 +1,11 @@
 
+Plan to manage -   
+	bring together db change-migration,  and grails under,  and skos templates in one repo
+	fork d2rml with submodule
+	fork skos.  
+	git submodules 
+
+------
 To run,
 
 grails run-script test.groovy
