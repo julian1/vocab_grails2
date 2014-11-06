@@ -11,6 +11,7 @@ Goals
 	- one layer of abstraction above the db
 	- presents objects rather than tables, and allows dot notation to join relations 
 	- presents the logical object/tuple, rather than an integer foreign key
+	- includes ownership specification for cascading saves and deletes
 
 Issues
 	- read and write roles on the db 
